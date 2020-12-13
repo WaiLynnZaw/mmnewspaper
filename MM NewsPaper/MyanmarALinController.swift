@@ -9,9 +9,7 @@
 import UIKit
 import WebKit
 class MyanmarALinController: UIViewController, WKNavigationDelegate {
-    
     var newsWeb: WKWebView!
-    var url: String = "https://www.moi.gov.mm/mal/"
     var pdfUrl = URL(string: "")
     let supportedSchemes = ["http", "https"]
     override func viewDidLoad() {
@@ -21,7 +19,7 @@ class MyanmarALinController: UIViewController, WKNavigationDelegate {
         newsWeb.navigationDelegate = self
         newsWeb.frame = self.view.frame
         self.view.addSubview(newsWeb)
-        if let url = URL(string: url) {
+        if let url = URL(string: getUrl()) {
             let request = URLRequest(url: url)
             newsWeb.load(request)
         }
@@ -29,8 +27,15 @@ class MyanmarALinController: UIViewController, WKNavigationDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "မြန်မာ့အလင်း"
+        navigationItem.title = getTitle()
         Utils().showProgressHUD(self.view)
+    }
+    
+    func getTitle() -> String {
+        return "မြန်မာ့အလင်း"
+    }
+    func getUrl() -> String {
+        return "https://www.moi.gov.mm/mal/"
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
