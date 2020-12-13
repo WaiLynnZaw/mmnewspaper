@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a16-vZ-6G0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a16-vZ-6G0" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="2KA-WB-fgO"/>
@@ -30,7 +29,6 @@
                             <constraint firstItem="a16-vZ-6G0" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="MvI-CY-dXa"/>
                             <constraint firstItem="a16-vZ-6G0" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="hug-cb-npH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" id="cbt-Wa-EuM"/>
                     <connections>
@@ -51,10 +49,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfn-Rw-L8L" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="4kL-9Y-8Wk"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Dfn-Rw-L8L" firstAttribute="leading" secondItem="4kL-9Y-8Wk" secondAttribute="leading" id="1c9-MQ-9M0"/>
@@ -62,7 +61,6 @@
                             <constraint firstItem="Dfn-Rw-L8L" firstAttribute="bottom" secondItem="4kL-9Y-8Wk" secondAttribute="bottom" id="Z5F-YH-3Xd"/>
                             <constraint firstItem="Dfn-Rw-L8L" firstAttribute="trailing" secondItem="4kL-9Y-8Wk" secondAttribute="trailing" id="vyG-FN-EDG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4kL-9Y-8Wk"/>
                     </view>
                     <connections>
                         <outlet property="pdfView" destination="Dfn-Rw-L8L" id="9di-GA-HgL"/>
@@ -81,10 +79,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7e-Fs-Ots">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q7e-Fs-Ots" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="7XB-qA-Ncf"/>
@@ -92,7 +91,6 @@
                             <constraint firstItem="q7e-Fs-Ots" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="XIn-JJ-LPX"/>
                             <constraint firstItem="q7e-Fs-Ots" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="wZz-HC-GMw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" id="apN-hT-g2h"/>
                     <connections>
@@ -122,14 +120,14 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--ျမန္မာ့အလင္း-->
+        <!--မြန်မာ့အလင်း-->
         <scene sceneID="8pn-zh-43Y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ggy-Hw-Two" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ျမန္မာ့အလင္း" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="မြန်မာ့အလင်း" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dPD-pn-rBe">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -141,14 +139,14 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--ေၾကးမုံ-->
+        <!--ကြေးမုံ-->
         <scene sceneID="6R2-Dj-wKL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mx2-JV-B2q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ေၾကးမုံ" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="ကြေးမုံ" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BIs-DG-VId">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -161,11 +159,11 @@
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="J3D-Yk-7Ci"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="29" height="29"/>
         <image name="second" width="29" height="29"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="J3D-Yk-7Ci"/>
-    </inferredMetricsTieBreakers>
 </document>

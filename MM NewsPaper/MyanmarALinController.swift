@@ -24,7 +24,7 @@ class MyanmarALinController: UIViewController, UIWebViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = "ျမန္မာ့အလင္း"
+        navigationItem.title = "မြန်မာ့အလင်း"
     }
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
