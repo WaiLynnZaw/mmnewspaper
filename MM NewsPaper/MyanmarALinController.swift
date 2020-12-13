@@ -7,48 +7,58 @@
 //
 
 import UIKit
-
-class MyanmarALinController: UIViewController, UIWebViewDelegate {
-
-    @IBOutlet var webView: UIWebView!
+import WebKit
+class MyanmarALinController: UIViewController, WKNavigationDelegate {
+    
+    var newsWeb: WKWebView!
     var url: String = "https://www.moi.gov.mm/mal/"
     var pdfUrl = URL(string: "")
+    let supportedSchemes = ["http", "https"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.delegate = self
+        let webConfiguration = WKWebViewConfiguration()
+        newsWeb = WKWebView(frame: .zero, configuration: webConfiguration)
+        newsWeb.navigationDelegate = self
+        newsWeb.frame = self.view.frame
+        self.view.addSubview(newsWeb)
         if let url = URL(string: url) {
             let request = URLRequest(url: url)
-            webView.loadRequest(request)
+            newsWeb.load(request)
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = "မြန်မာ့အလင်း"
+        Utils().showProgressHUD(self.view)
     }
-
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        if navigationType == UIWebView.NavigationType.linkClicked {
-            self.pdfUrl = request.url
-            self.performSegue(withIdentifier: "pdfSegue", sender: nil)
-            return false
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        defer {
+            decisionHandler(.allow)
         }
-        return true
+        guard
+            navigationAction.navigationType == .linkActivated,
+            let url = navigationAction.request.url,
+            let scheme = url.scheme,
+            supportedSchemes.contains(scheme)
+        else {
+            return
+        }
+        self.pdfUrl = url
+        self.performSegue(withIdentifier: "pdfSegue", sender: nil)
     }
-
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        Utils().hideProgressHUD(self.view)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pdfSegue" {
             if let vc = segue.destination as? PDFViewController {
                 vc.pdfURL = self.pdfUrl
             }
         }
-    }
-
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        Utils().hideProgressHUD(self.view)
-    }
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        Utils().showProgressHUD(self.view)
     }
 }
 
