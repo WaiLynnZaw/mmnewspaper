@@ -10,7 +10,7 @@ import UIKit
 
 class KyayMonController: UIViewController, UIWebViewDelegate {
     @IBOutlet var webView: UIWebView!
-    var url: String = "http://www.moi.gov.mm/npe/km/"
+    var url: String = "https://www.moi.gov.mm/km/"
     var pdfUrl = URL(string: "")
     override func viewDidLoad() {
         super.viewDidLoad()

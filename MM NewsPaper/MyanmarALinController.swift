@@ -11,7 +11,7 @@ import UIKit
 class MyanmarALinController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet var webView: UIWebView!
-    var url: String = "http://www.moi.gov.mm/npe/mal/"
+    var url: String = "https://www.moi.gov.mm/mal/"
     var pdfUrl = URL(string: "")
     override func viewDidLoad() {
         super.viewDidLoad()
